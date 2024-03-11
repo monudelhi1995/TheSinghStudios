@@ -4,10 +4,7 @@ window.onload = function() {
 
 function replaceCustomHeaderContent() {
 
-    console.log("Mayank log is here");
-
     var customHeaderDiv = document.getElementById("customHeader");
-
     if (customHeaderDiv) {
         customHeaderDiv.innerHTML = `
                	<header class="header-section">
@@ -48,14 +45,44 @@ function replaceCustomHeaderContent() {
             `;
     }
 
-    //  var customHeaderDiv = document.getElementById("customHeader");
+    var footerDiv = document.querySelector('.footer-section');
 
-    //     if (customHeaderDiv) {
-    //         fetch('header.html')
-    //             .then(response => response.text())
-    //             .then(html => {
-    //                 customHeaderDiv.innerHTML = html;
-    //             })
-    //             .catch(error => console.error('Error fetching HTML file:', error));
-    //     }
+    // Check if the footer with class "something" exists before replacing its content
+    if (footerDiv) {
+        // Your HTML content to replace the inner content of the footer
+        var newHTMLContent = `
+        <div class="container">
+        <div class="footer-left-pic">
+            <img src="img/footer-left-pic.png" alt="">
+        </div>
+        <div class="footer-right-pic">
+            <img src="img/footer-right-pic.png" alt="">
+        </div>
+        <a href="#" class="footer-logo">
+            <img src="./img/logo.png" alt="">
+        </a>
+        <ul class="main-menu footer-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Games</a></li>
+            <li><a href="">Reviews</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div class="footer-social d-flex justify-content-center">
+        <p>Follow us:</p>
+        <a href="https://www.youtube.com/channel/UCNfeTXZ2VAxaLpmoz0H5jvQ"><i class="fa fa-youtube"></i></a>
+        <a href="https://www.udemy.com/user/mayank-singh-336/"><i class="fa  fa-graduation-cap
+        "></i></a>
+        </div>
+        <div class="copyright"><a href="">TheSinghStudios</a> 2024 @ All rights reserved</div>
+    </div>
+
+        `;
+
+        footerDiv.innerHTML = newHTMLContent;
+    }
+
+
+
+  
 }
