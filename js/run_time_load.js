@@ -20,7 +20,7 @@ function replaceCustomHeaderContent() {
                         <div class="header-bar-warp d-flex">
                             <!-- site logo -->
                             <a href="index.html" class="site-logo">
-                                <img src="./img/logo.png" alt="">
+                                <img width="100" height="100" src="./img/logo.png" alt="">
                             </a>
                             <nav class="top-nav-area w-100">
                                 <!-- <div class="user-panel">
