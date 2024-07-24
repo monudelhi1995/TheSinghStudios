@@ -65,6 +65,17 @@ $(window).on('load', function() {
 		}
 	});
 
+	$("#owl-demo5").owlCarousel({
+		loop: true,
+	    nav: false, // Show next and prev buttons
+	    slideSpeed: 200,
+	    autoPlay: true,
+	    paginationSpeed: 400,
+	    items:1,
+	    animateOut: 'fadeOut',
+		animateIn: 'fadeIn',
+  	});
+
 
 
 	/*------------------

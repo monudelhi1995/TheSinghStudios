@@ -37,6 +37,7 @@ function replaceCustomHeaderContent() {
                                     <li><a href="review.html">Reviews</a></li>
                                     <li><a href="blog.html">News</a></li>
                                     <li><a href="contact.html">Contact</a></li>
+                                    <button type="button" class="btn btn-primary button-primary-purp">Download</button>
                                 </ul>
                             </nav>
                         </div>
@@ -67,6 +68,7 @@ function replaceCustomHeaderContent() {
             <li><a href="">Reviews</a></li>
             <li><a href="">News</a></li>
             <li><a href="">Contact</a></li>
+             <button type="button" class="btn btn-primary button-primary-purp">Download</button>
         </ul>
         <div class="footer-social d-flex justify-content-center">
         <p>Follow us:</p>
@@ -81,8 +83,6 @@ function replaceCustomHeaderContent() {
 
         footerDiv.innerHTML = newHTMLContent;
     }
-
-
 
   
 }
