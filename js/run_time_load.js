@@ -12,10 +12,7 @@ function replaceCustomHeaderContent() {
                         <div class="header-social d-flex justify-content-end">
                             <p>Follow us:</p>
                             <a href="https://www.youtube.com/channel/UCNfeTXZ2VAxaLpmoz0H5jvQ"><i class="fa fa-youtube"></i></a>
-                            <a href="https://www.udemy.com/user/mayank-singh-336/"><i class="fa  fa-graduation-cap
-                            "></i></a>
-                        <!-- <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a> -->
+                            <a href="https://www.udemy.com/user/mayank-singh-336/"><i class="fa  fa-graduation-cap"></i></a>
                         </div>
                         <div class="header-bar-warp d-flex">
                             <!-- site logo -->
@@ -23,9 +20,6 @@ function replaceCustomHeaderContent() {
                                 <img width="100" height="100" src="./img/logo.png" alt="">
                             </a>
                             <nav class="top-nav-area w-100">
-                                <!-- <div class="user-panel">
-                                    <a href="">Login</a> / <a href="">Register</a>
-                                </div> -->
                                 <!-- Menu -->
                                 <ul class="main-menu primary-menu">
                                     <li><a href="index.html">Home</a></li>
@@ -37,7 +31,6 @@ function replaceCustomHeaderContent() {
                                     <li><a href="review.html">Reviews</a></li>
                                     <li><a href="blog.html">News</a></li>
                                     <li><a href="contact.html">Contact</a></li>
-                                    <button type="button" class="btn btn-primary button-primary-purp">Download</button>
                                 </ul>
                             </nav>
                         </div>
