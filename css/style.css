@@ -588,6 +588,43 @@ ol {
 	padding: 115px 0;
 }
 
+.owl-carousel {
+	background: #0c062e;
+	padding: 15px 0;
+}
+
+.owl-carousel .item {
+	margin: 10px; /* Add margin around each item */
+	padding: 10px; /* Add padding inside each item */
+	border: 1px solid #ddd; /* Optional: add border for better visibility */
+	border-radius: 5px; /* Optional: rounded corners */
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add shadow */
+	background-color: #f9f9f9; /* Optional: background color */
+}
+.owl-carousel .item img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 5px; /* Optional: rounded corners for images */
+}
+.content-box.edu {
+	padding: 15px; /* Padding inside the content box */
+	background-color: #fff; /* Background color */
+	border-radius: 5px; /* Rounded corners */
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: shadow effect */
+	text-align: center; /* Center text */
+}
+.content-box.edu h4 {
+	margin-top: 0;
+}
+.text-orange {
+	color: #ff6600; /* Orange color for links */
+	text-decoration: none;
+}
+.text-orange:hover {
+	text-decoration: underline;
+}
+
 .text-box .top-meta {
 	font-size: 18px;
 	font-weight: 500;

@@ -71,9 +71,10 @@ $(window).on('load', function() {
 	    slideSpeed: 200,
 	    autoPlay: true,
 	    paginationSpeed: 400,
-	    items:1,
+	    items:4,
 	    animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
+
   	});
 
 
