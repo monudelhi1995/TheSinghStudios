@@ -23,13 +23,8 @@ function replaceCustomHeaderContent() {
                                 <!-- Menu -->
                                 <ul class="main-menu primary-menu">
                                     <li><a href="index.html">Home</a></li>
-                                    <li><a href="games.html">Games</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="game-single.html">Game Singel</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="review.html">Reviews</a></li>
-                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCNfeTXZ2VAxaLpmoz0H5jvQ">Youtube</a></li>
+                                    <li><a href="https://www.udemy.com/user/mayank-singh-336">Courses</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
