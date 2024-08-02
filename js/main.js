@@ -1,10 +1,3 @@
-/* =================================
-------------------------------------
-	EndGam - Gaming Magazine Template
-	Version: 1.0
- ------------------------------------
- ====================================*/
-
 
 'use strict';
 
@@ -74,7 +67,17 @@ $(window).on('load', function() {
 	    items:4,
 	    animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
-
+		responsive: {
+			0: {
+				items: 1 // 1 item for screens 0px and up
+			},
+			600: {
+				items: 2 // 2 items for screens 600px and up
+			},
+			1000: {
+				items: 4 // 4 items for screens 1000px and up
+			}
+		}
   	});
 
 
