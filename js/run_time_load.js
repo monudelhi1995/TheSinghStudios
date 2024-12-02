@@ -9,15 +9,11 @@ function replaceCustomHeaderContent() {
         customHeaderDiv.innerHTML = `
                	<header class="header-section">
                     <div class="header-warp">
-                        <div class="header-social d-flex justify-content-end">
-                            <p>Follow us:</p>
-                            <a href="https://www.youtube.com/channel/UCNfeTXZ2VAxaLpmoz0H5jvQ"><i class="fa fa-youtube"></i></a>
-                            <a href="https://www.udemy.com/user/mayank-singh-336/"><i class="fa  fa-graduation-cap"></i></a>
-                        </div>
+
                         <div class="header-bar-warp d-flex">
                             <!-- site logo -->
-                            <a href="index.html" class="site-logo">
-                                <img width="100" height="100" src="./img/logo.png" alt="">
+                            <a href="index.html" style="padding;padding-left: 10px;" class="site-logo">
+                                <img width="75" height="75" src="./img/logo.png" alt="">
                             </a>
                             <nav class="top-nav-area w-100">
                                 <!-- Menu -->
@@ -34,6 +30,13 @@ function replaceCustomHeaderContent() {
             `;
     }
 
+
+
+//     <div class="header-social d-flex justify-content-end">
+//     <p>Follow us:</p>
+//     <a href="https://www.youtube.com/channel/UCNfeTXZ2VAxaLpmoz0H5jvQ"><i class="fa fa-youtube"></i></a>
+//     <a href="https://www.udemy.com/user/mayank-singh-336/"><i class="fa  fa-graduation-cap"></i></a>
+//      </div>
     var footerDiv = document.querySelector('.footer-section');
 
     // Check if the footer with class "something" exists before replacing its content

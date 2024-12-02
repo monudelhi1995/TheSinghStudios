@@ -3,7 +3,7 @@ body {
 	height: 100%;
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	font-smooth: antialiased;
 }
 
 h1,
@@ -256,17 +256,16 @@ ol {
 ---------------------*/
 
 .header-section {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	left: 0;
 	top: 0;
 	z-index: 99;
-	padding: 15px 15px 0;
+	padding: 0 0 0;
 }
 
 .header-warp {
-	max-width: 1496px;
-	margin: 0 auto;
+	margin: 0% 0%;
 }
 
 .header-social p,
@@ -322,6 +321,37 @@ ol {
 	padding: 15px 0px 0px 0px;
 
 }
+/*Dropdown Added #RA*/
+.nav ul li.dropdown {
+    position: relative;
+}
+
+.nav ul li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #c3a8f0;
+}
+/*End*/
 
 .site-logo {
 	float: left;
