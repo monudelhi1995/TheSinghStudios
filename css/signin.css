@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial,
+    sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  background-color: #000;
+}
+.indexlink {
+  text-decoration: none;
+  color: #ffffff;
+}
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  z-index: 10;
+}
+
+.logo {
+  width: 120px;
+  height: 60px;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+.auth-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.auth-box {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.auth-header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.auth-header p {
+  color: #cccccc;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff4655;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 1rem;
+  background: #ff4655;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.auth-button:hover {
+  background: #ff5f6d;
+}
+
+.social-auth {
+  text-align: center;
+}
+
+.social-auth p {
+  color: #cccccc;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.social-auth p::before,
+.social-auth p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-auth p::before {
+  left: 0;
+}
+
+.social-auth p::after {
+  right: 0;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.social-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.switch-auth {
+  text-align: center;
+  margin-top: 2rem;
+  color: #cccccc;
+}
+
+.switch-auth a {
+  color: #ff4655;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.switch-auth a:hover {
+  color: #ff5f6d;
+}
+
+.terms {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.terms a {
+  color: #ff4655;
+  text-decoration: none;
+}
+
+.messageDiv {
+  display: none;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.5;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fee2e2;
+  color: #dc2626;
+  z-index: 1000;
+}
+
+/* Restore original Google button styling */
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: white;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.social-button:hover {
+  background-color: #f5f5f5;
+}
+
+.social-button::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-image: url("googleicon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.auth-box {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-container {
+  position: relative;
+}
+.auth-box {
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 2rem;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+  }
+}

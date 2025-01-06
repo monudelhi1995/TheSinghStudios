@@ -1,224 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Arial, sans-serif;
-      }
-
-      body {
-        min-height: 100vh;
-        color: white;
-        position: relative;
-        background-color: #000;
-      }
-      .indexlink {
-        text-decoration: none;
-        color: #ffffff;
-      }
-      .background-image {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.6;
-        z-index: 0;
-      }
-
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        background: transparent;
-        z-index: 10;
-      }
-
-      .logo {
-        width: 120px;
-        height: 60px;
-      }
-
-      .logo img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-
-      .auth-container {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .auth-box {
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(10px);
-        padding: 3rem;
-        border-radius: 12px;
-        width: 100%;
-        max-width: 400px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .auth-header {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      .auth-header h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .auth-header p {
-        color: #cccccc;
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: #cccccc;
-        font-size: 0.9rem;
-      }
-
-      .form-group input {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 6px;
-        color: white;
-        font-size: 1rem;
-        transition: border-color 0.3s;
-      }
-
-      .form-group input:focus {
-        outline: none;
-        border-color: #ff4655;
-      }
-
-      .auth-button {
-        width: 100%;
-        padding: 1rem;
-        background: #ff4655;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin-bottom: 1.5rem;
-      }
-
-      .auth-button:hover {
-        background: #ff5f6d;
-      }
-
-      .social-auth {
-        text-align: center;
-      }
-
-      .social-auth p {
-        color: #cccccc;
-        margin-bottom: 1rem;
-        position: relative;
-      }
-
-      .social-auth p::before,
-      .social-auth p::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 30%;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .social-auth p::before {
-        left: 0;
-      }
-
-      .social-auth p::after {
-        right: 0;
-      }
-
-      .social-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-      }
-
-      .social-button {
-        padding: 0.75rem 1.5rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 6px;
-        background: rgba(255, 255, 255, 0.05);
-        color: white;
-        text-decoration: none;
-        transition: background-color 0.3s;
-      }
-
-      .social-button:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .switch-auth {
-        text-align: center;
-        margin-top: 2rem;
-        color: #cccccc;
-      }
-
-      .switch-auth a {
-        color: #ff4655;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .switch-auth a:hover {
-        color: #ff5f6d;
-      }
-
-      .terms {
-        text-align: center;
-        margin-top: 1rem;
-        font-size: 0.8rem;
-        color: #888;
-      }
-
-      .terms a {
-        color: #ff4655;
-        text-decoration: none;
-      }
-
-      @media (max-width: 480px) {
-        .auth-box {
-          padding: 2rem;
-        }
-
-        .social-buttons {
-          flex-direction: column;
-        }
-      }
-    </style>
+    <title>TheSinghStudios</title>
+    <link href="img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="css/signin.css" />
+    <script type="module" src="js/firebaseauth.js"></script>
   </head>
   <body>
     <!-- Sign In Page -->
@@ -234,6 +20,7 @@
       </nav>
 
       <div class="auth-container">
+        <div id="signInMessage" class="messageDiv"></div>
         <div class="auth-box">
           <div class="auth-header">
             <h1>Welcome Back</h1>
@@ -261,9 +48,7 @@
               />
             </div>
 
-            <button type="submit" class="auth-button">
-              <a class="indexlink" href="index.html"> Sign In </a>
-            </button>
+            <button type="submit" class="auth-button">Sign In</button>
 
             <div class="social-auth">
               <p>Or continue with</p>
@@ -295,6 +80,7 @@
       </nav>
 
       <div class="auth-container">
+        <div id="signUpMessage" class="messageDiv"></div>
         <div class="auth-box">
           <div class="auth-header">
             <h1>Create Account</h1>
@@ -302,7 +88,7 @@
           </div>
 
           <form>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="signup-username">Username</label>
               <input
                 type="text"
@@ -310,7 +96,7 @@
                 placeholder="Choose a username"
                 required
               />
-            </div>
+            </div> -->
 
             <div class="form-group">
               <label for="signup-email">Email</label>
@@ -344,20 +130,20 @@
 
             <button type="submit" class="auth-button">Create Account</button>
 
-            <div class="social-auth">
+            <!-- <div class="social-auth">
               <p>Or sign up with</p>
               <div class="social-buttons">
                 <a href="#" class="social-button">Google</a>
-                <!-- <a href="#" class="social-button">Facebook</a>
-                <a href="#" class="social-button">Discord</a> -->
+                <a href="#" class="social-button">Facebook</a>
+                <a href="#" class="social-button">Discord</a>
               </div>
-            </div>
+            </div> -->
 
-            <div class="terms">
+            <!-- <div class="terms">
               By signing up, you agree to our
               <a href="#">Terms of Service</a> and
               <a href="#">Privacy Policy</a>
-            </div>
+            </div> -->
 
             <div class="switch-auth">
               Already have an account? <a href="#signin-page">Sign in</a>
