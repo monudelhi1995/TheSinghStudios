@@ -5,11 +5,21 @@
     <link href="img/favicon.ico" rel="icon" />
     <link rel="stylesheet" href="css/signin.css" />
     <script type="module" src="js/firebaseauth.js"></script>
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
   </head>
   <body>
     <!-- Sign In Page -->
     <div id="signin-page">
-      <img src="img/gamess1.jpeg" alt="Background" class="background-image" />
+      <img
+        src="img/signinimage1.webp"
+        alt="Background"
+        class="background-image"
+      />
 
       <nav class="navbar">
         <div class="logo">
@@ -49,7 +59,9 @@
             </div>
 
             <button type="submit" class="auth-button">Sign In</button>
-
+            <label class="forgotpassword" id="forgotpasslabel"
+              >Forgot Password?</label
+            >
             <div class="social-auth">
               <p>Or continue with</p>
               <div class="social-buttons">
@@ -58,6 +70,9 @@
                 <a href="#" class="social-button">Discord</a> -->
               </div>
             </div>
+            <!-- <div class="back-link">
+              <a href="forgotpass.html">Forgot Password?</a>
+            </div> -->
 
             <div class="switch-auth">
               Don't have an account? <a href="#signup-page">Sign up</a>
@@ -69,7 +84,11 @@
 
     <!-- Sign Up Page -->
     <div id="signup-page" style="display: none">
-      <img src="img/promo-bg.jpg" alt="Background" class="background-image" />
+      <img
+        src="img/signup image.jpg"
+        alt="Background"
+        class="background-image"
+      />
 
       <nav class="navbar">
         <div class="logo">
@@ -152,6 +171,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Forgot Password Page -->
 
     <script>
       // Simple page switching logic

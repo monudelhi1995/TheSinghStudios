@@ -135,7 +135,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .auth-button:hover {
@@ -278,6 +278,38 @@ body {
 .auth-box {
   position: relative;
 }
+
+.forgotpassword {
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
+  color: #ff4655;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.forgotpassword:hover {
+  color: #ff707c;
+}
+
+/* .forgot-password {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.forgot-password a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+#forgot-password-page .auth-box {
+  max-width: 400px;
+} */
 
 @media (max-width: 480px) {
   .auth-box {

@@ -90,6 +90,7 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
+  sendPasswordResetEmail,
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
@@ -131,6 +132,19 @@ function showMessage(elementId, message, isError = true) {
   messageDiv.style.boxSizing = "border-box";
 }
 
+// Update page switching logic to include forgot password page
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const pageId = this.getAttribute("href").substring(1);
+    document
+      .querySelectorAll("#signin-page, #signup-page, #forgot-password-page")
+      .forEach((page) => {
+        page.style.display = "none";
+      });
+    document.getElementById(pageId).style.display = "block";
+  });
+});
 // Sign Up Function
 const signUpForm = document.querySelector("#signup-page form");
 if (signUpForm) {
@@ -198,33 +212,77 @@ if (signUpForm) {
   });
 }
 
+const email = document.getElementById("signin-email");
+const password = document.getElementById("signin-password");
+
 // Sign In Function
 const signInForm = document.querySelector("#signin-page form");
 if (signInForm) {
   signInForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById("signin-email").value;
-    const password = document.getElementById("signin-password").value;
+    // Check if email and password inputs exist
+    if (!email || !password) {
+      showMessage("signInMessage", "Email or password field not found");
+      return;
+    }
 
     try {
-      const userCredential = await signInWithEmailAndPassword(
+      // Get the values from the input fields
+      const emailValue = email.value.trim();
+      const passwordValue = password.value.trim();
+
+      // Validate inputs
+      if (!emailValue || !passwordValue) {
+        showMessage("signInMessage", "Please fill in all fields");
+        return;
+      }
+
+      // Attempt to sign in
+      const { user } = await signInWithEmailAndPassword(
         auth,
-        email,
-        password
+        emailValue,
+        passwordValue
       );
+
+      // Clear the form
+      signInForm.reset();
+
+      // Show success message
       showMessage("signInMessage", "Signed in successfully!", false);
 
+      // Store user info if needed
+      localStorage.setItem("userEmail", user.email);
+
+      // Redirect after success
       setTimeout(() => {
         window.location.href = "logindash.html";
       }, 2000);
     } catch (error) {
-      let errorMessage = "Invalid email or password";
+      console.error("Sign-in error:", error);
+      let errorMessage;
+
+      switch (error.code) {
+        case "auth/invalid-email":
+          errorMessage = "Invalid email format";
+          break;
+        case "auth/user-not-found":
+        case "auth/wrong-password":
+          errorMessage = "Invalid email or password";
+          break;
+        case "auth/too-many-requests":
+          errorMessage = "Too many attempts. Please try again later";
+          break;
+        default:
+          errorMessage = "Error signing in. Please try again";
+      }
+
       showMessage("signInMessage", errorMessage);
+      // Clear password field on error
+      if (password) password.value = "";
     }
   });
 }
-
 // Google Sign In
 document.querySelectorAll(".social-button").forEach((button) => {
   if (button.textContent.trim() === "Google") {
@@ -258,7 +316,99 @@ document.querySelectorAll(".social-button").forEach((button) => {
     });
   }
 });
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const pageId = this.getAttribute("href").substring(1);
 
+    // Hide all pages
+    document
+      .querySelectorAll("#signin-page, #signup-page, #forgot-password-page")
+      .forEach((page) => {
+        page.style.display = "none";
+      });
+
+    // Show selected page
+    const selectedPage = document.getElementById(pageId);
+    if (selectedPage) {
+      selectedPage.style.display = "block";
+    }
+
+    // Clear any existing messages
+    document.querySelectorAll(".messageDiv").forEach((div) => {
+      div.style.display = "none";
+    });
+  });
+});
+
+let ForgotPassLabel = document.getElementById("forgotpasslabel");
+
+let ForgotPassword = (e) => {
+  e.preventDefault();
+
+  // Sign out and clear any existing tokens first
+  signOut(auth)
+    .then(() => {
+      // Clear any persisted auth data
+      indexedDB.deleteDatabase("firebaseLocalStorageDb");
+      localStorage.clear();
+      sessionStorage.clear();
+
+      return sendPasswordResetEmail(auth, email.value);
+    })
+    .then(() => {
+      alert("A password reset link has been sent to your email");
+
+      // Redirect to login page
+      setTimeout(() => {
+        window.location.href = "login.html"; // or your login page URL
+        // Force a page reload to clear any cached auth states
+        window.location.reload(true);
+      }, 3000);
+    })
+    .catch((error) => {
+      console.error("Full error object:", error); // Log the full error
+      let errorMessage;
+      switch (error.code) {
+        case "auth/invalid-email":
+          errorMessage = "Invalid email address";
+          break;
+        case "auth/user-not-found":
+          errorMessage = "No account found with this email";
+          break;
+        case "auth/network-request-failed":
+          errorMessage = "Network error. Please check your connection.";
+          break;
+        case "auth/too-many-requests":
+          errorMessage = "Too many attempts. Please try again later.";
+          break;
+        default:
+          errorMessage = `Error: ${error.message}`;
+      }
+      alert(errorMessage);
+    });
+};
+auth.onAuthStateChanged((user) => {
+  console.log(
+    "Auth state changed:",
+    user ? "User is signed in" : "User is signed out"
+  );
+  if (user) {
+    // User is signed in
+    console.log("Current user email:", user.email);
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // Forgot password link
+  if (ForgotPassLabel) {
+    ForgotPassLabel.addEventListener("click", ForgotPassword);
+  }
+});
+// Make sure the initial page is visible
+window.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash || "#signin-page";
+  document.querySelector(`a[href="${hash}"]`)?.click();
+});
 // Handle Logout
 const handleLogout = async () => {
   try {
