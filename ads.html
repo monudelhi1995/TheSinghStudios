@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ad Container</title>
+    <!-- AdSense Script -->
+    <!-- <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4242339521585955"
+      crossorigin="anonymous"
+    ></script> -->
+    <style>
+      body {
+        margin: 0;
+        background: rgba(0, 0, 0, 0.9);
+      }
+      #adContainer {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 728px; /* Standard leaderboard ad size */
+        height: 90px;
+      }
+      #closeAdButton {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: #ff4444;
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: none; /* Hidden until ad loads */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ad Container -->
+    <!-- <div id="adContainer">
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4242339521585955"
+        crossorigin="anonymous"
+      ></script>
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-format="autorelaxed"
+        data-ad-client="ca-pub-4242339521585955"
+        data-ad-slot="3993479697"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script> -->
+    <div id="adContainer">
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4242339521585955"
+        crossorigin="anonymous"
+      ></script>
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+        data-ad-slot="YOUR_AD_SLOT_ID"
+        data-ad-format="horizontal"
+        data-adtest="on"
+        data-full-width-responsive="false"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <!-- Close Button (Simulate ad completion) -->
+    <button id="closeAdButton">Skip Ad</button>
+    <script>
+      // Uncommented and fixed version
+      let adClosed = false;
+
+      // Show close button when ad loads
+      const checkAd = setInterval(() => {
+        const adContent = document.querySelector(".adsbygoogle iframe");
+        if (adContent && adContent.innerHTML.trim() !== "") {
+          document.getElementById("closeAdButton").style.display = "block";
+          clearInterval(checkAd);
+        }
+      }, 500);
+
+      // Close handler
+      document.getElementById("closeAdButton").addEventListener("click", () => {
+        window.parent.postMessage("adCompleted", "*");
+        document.getElementById("adContainer").style.display = "none";
+      });
+    </script>
+  </body>
+</html>
