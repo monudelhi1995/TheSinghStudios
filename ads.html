@@ -1,120 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Ad Container</title>
-    <style>
-      body {
-        margin: 0;
-        background: rgba(0, 0, 0, 0.9);
-      }
-      #adContainer {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 728px;
-        height: 90px;
-      }
-      #closeAdButton {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 10px 20px;
-        background: #ff4444;
-        color: white;
-        border: none;
-        cursor: pointer;
-        display: none;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5478095770195075"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <!-- Ad Container -->
-    <div id="adContainer">
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4242339521585955"
-        crossorigin="anonymous"
-      ></script>
-      <ins
-        class="adsbygoogle"
-        style="display: block"
-        data-ad-client="ca-pub-4242339521585955"
-        data-ad-slot="3993479697"
-        data-ad-format="horizontal"
-        data-adtest="on"
-        data-full-width-responsive="false"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
-
-    <!-- Close Button -->
-    <button id="closeAdButton">Skip Ad</button>
-
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5478095770195075"
+      crossorigin="anonymous"
+    ></script>
+    <ins
+      class="adsbygoogle"
+      style="display: block"
+      data-ad-format="autorelaxed"
+      data-ad-client="ca-pub-5478095770195075"
+      data-ad-slot="7267947084"
+    ></ins>
     <script>
-      // Uncommented and fixed version
-      let adClosed = false;
-
-      // Show close button when ad loads
-      const checkAd = setInterval(() => {
-        const adContent = document.querySelector(".adsbygoogle iframe");
-        if (adContent && adContent.innerHTML.trim() !== "") {
-          document.getElementById("closeAdButton").style.display = "block";
-          clearInterval(checkAd);
-        }
-      }, 500);
-
-      // Close handler
-      document.getElementById("closeAdButton").addEventListener("click", () => {
-        window.parent.postMessage("adCompleted", "*");
-        document.getElementById("adContainer").style.display = "none";
-      });
-    </script>
-    <script type="module">
-      // Import your existing Firebase configuration
-      import { initializeApp } from "firebase/app";
-      import { getDatabase, ref, push } from "firebase/database";
-
-      const firebaseConfig = {
-        // Your existing Firebase config
-        apiKey: "AIzaSyCJiUu5rAz-5xTMEB5IPmVqod6W7QdXbeo",
-        authDomain: "mrsinghstudio-3a44c.firebaseapp.com",
-        databaseURL:
-          "https://mrsinghstudio-3a44c-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "mrsinghstudio-3a44c",
-        storageBucket: "mrsinghstudio-3a44c.firebasestorage.app",
-        messagingSenderId: "932982058445",
-        appId: "1:932982058445:web:bb186c61a95402e4aba884",
-        measurementId: "G-NF09DCWJTG",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getDatabase(app);
-
-      function trackAdView() {
-        // Get user ID from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const userId = urlParams.get("userId"); // Pass this when opening the ad page
-
-        const adView = {
-          timestamp: new Date().toISOString(),
-          userId: userId || "anonymous",
-          adId: "3993479697", // Or whatever identifier you want to use
-          viewed: true,
-        };
-
-        // Store in Firebase
-        const adViewsRef = ref(db, "adViews");
-        push(adViewsRef, adView)
-          .then(() => console.log("Ad view tracked"))
-          .catch((error) => console.error("Error tracking ad view:", error));
-      }
-
-      // Track when page loads
-      window.addEventListener("load", trackAdView);
+      (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </body>
 </html>
