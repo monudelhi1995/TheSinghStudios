@@ -31,20 +31,14 @@
 
       .ad-content {
         background: rgba(255, 255, 255, 0.1);
-        min-height: 300px; /* Minimum height for ads */
-        width: 100%; /* Full width of container */
-        display: block; /* Change from flex to block */
+        min-height: 90px; /* Minimum height - responsive will adjust */
+        width: 100%; /* Full width - responsive will adjust */
+        display: block;
         border-radius: 10px;
         margin: 30px 0;
-        overflow: hidden; /* Prevent content overflow */
+        overflow: hidden;
       }
 
-      /* Add this new class for ad container */
-      .ad-container {
-        width: 728px; /* Standard leaderboard size */
-        height: 90px;
-        margin: 0 auto;
-      }
       #closeButton {
         width: 100%;
         padding: 18px;
@@ -113,22 +107,6 @@
         }
       }
     </style>
-    <!-- AdSense Script -->
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1036389450136066"
-      crossorigin="anonymous"
-    ></script>
-    <!-- <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-format="autorelaxed"
-      data-ad-client="ca-pub-5478095770195075"
-      data-ad-slot="7267947084"
-    ></ins> -->
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
   </head>
   <body>
     <div class="ad-popup">
@@ -140,12 +118,16 @@
       </div>
 
       <div class="ad-content">
-        <!-- AdSense Ad Unit -->
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1036389450136066"
+          crossorigin="anonymous"
+        ></script>
         <ins
           class="adsbygoogle"
           style="display: block"
-          data-ad-client="ca-pub-5478095770195075"
-          data-ad-slot="7267947084"
+          data-ad-client="**ca-pub-1036389450136066"
+          data-ad-slot="1520149589"
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
