@@ -126,7 +126,7 @@ body {
   transition: background-color 0.3s;
 }
 .logo {
-  width: 160px;
+  width: 125px;
   height: 60px;
   display: flex;
   align-items: center;
