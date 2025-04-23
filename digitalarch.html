@@ -25,8 +25,7 @@
       /* Navbar */
       .navbar {
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 0;        left: 0;
         right: 0;
         display: flex;
         align-items: center;
@@ -278,6 +277,33 @@
         color: #3498db;
       }
 
+      .architecture-image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex: 1 1 100%;
+  }
+
+  .architecture-image-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+  }
+
+  .architecture-image-grid img:hover {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    .architecture-image-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
       @media (max-width: 1024px) {
         .description-container {
           flex-direction: column;
@@ -304,9 +330,9 @@
         <div class="logo-name">TheSingh Studios</div>
       </div>
       <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="tools.html">Tools</a>
-        <a href="#gallery">Gallery</a>
+        <a href="index.html">Home</a>
+        <!-- <a href="tools.html">Tools</a> -->
+        <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </div>
       <!-- <div class="right-section">
@@ -347,15 +373,25 @@
             <span class="feature-tag">Virtual Reality</span>
           </div>
         </div>
-        <div class="architecture-image">
-          <img
-            src="img/header-digital-twins-landing-page-3-1920x1080-1b52d164c4a7.webp"
-            alt="Digital Architecture Visualization"
-          />
-        </div>
+        
       </div>
     </section>
-
+    <section class="architecture-description">
+      <div class="description-container">
+        <div class="description-content">
+          <h2>A Glimpse Of Our Work</h2>
+          <p>
+            Our work in Digital Architecture combines real-time rendering and immersive design to transform how spaces are presented and experienced. Using Unreal Engine and interactive visual tools, we craft realistic environments for urban, residential, and institutional projects. Head on to the Gallery Section to get more in-depth details of our work 
+          </p>
+          
+        </div>
+<div class="architecture-image-grid">
+      <img src="img/digitalarchassets/ss1.png" alt="Digital Architecture Screenshot 1" />
+      <img src="img/digitalarchassets/ss2.png" alt="Digital Architecture Screenshot 2" />
+      <img src="img/digitalarchassets/ss7.png" alt="Digital Architecture Screenshot 3" />
+    </div>
+      </div>
+    </section>
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
