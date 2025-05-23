@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools - Digital Architecture</title>
+    <style>
+      /* Base Reset and Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Arial, sans-serif;
+      }
+      body {
+        background: #121212;
+        color: #e0e0e0;
+        min-height: 100vh;
+      }
+      a {
+        text-decoration: none;
+        color: #e0e0e0;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 0, 0, 0);
+        transition: background-color 0.3s;
+        z-index: 2;
+      }
+      /* Navbar background appears on scroll */
+      .navbar.scrolled {
+        background: rgba(0, 0, 0, 0.9);
+      }
+      .logo {
+        width: 140px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .logo-name {
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-left: 0.5rem;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex-grow: 1;
+        margin-left: 2rem;
+      }
+      .nav-links a {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: #3498db;
+      }
+      /* Hero Section */
+      .tools-hero {
+        margin-top: 80px; /* avoid navbar overlap */
+        text-align: center;
+        padding: 4rem 2rem;
+        background: #1a1a1a;
+      }
+      .tools-hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+      }
+      .tools-hero p {
+        font-size: 1.2rem;
+        color: #cccccc;
+      }
+
+      /* Tools Section */
+      .tools-section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .tool-card {
+        background: #1e1e1e;
+        padding: 1.5rem;
+        border: 1px solid #333;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      }
+      .tool-card h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+        color: #3498db;
+      }
+      .tool-card p {
+        font-size: 1rem;
+        color: #cccccc;
+        line-height: 1.5;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 2rem;
+        background: #1a1a1a;
+        color: #cccccc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="digitalarch.html">
+          <img src="../img/logo.png" alt="Digital Architecture Logo" />
+        </a>
+        <div class="logo-name">TheSingh Studios</div>
+      </div>
+      <div class="nav-links">
+        <a href="digitalarch.html">Home</a>
+        <a href="tools.html">Tools</a>
+        <a href="#gallery">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <!-- <div class="right-section">
+        <a href="#signin" class="signinlink">Sign In</a>
+      </div> -->
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero tools-hero">
+      <h1>Tools We Use</h1>
+      <p>
+        Explore the essential tools and software that power our digital
+        architecture projects.
+      </p>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+      <div class="tool-card">
+        <h2>Blender</h2>
+        <p>
+          A powerful open-source 3D modeling software for creating realistic
+          architectural visualizations.
+        </p>
+      </div>
+
+      <div class="tool-card">
+        <h2>Unreal Engine</h2>
+        <p>
+          Used for real-time architectural walkthroughs and immersive VR
+          experiences.
+        </p>
+      </div>
+
+      <div class="tool-card">
+        <h2>Autodesk Revit</h2>
+        <p>
+          A BIM software used for planning, designing, and constructing
+          buildings and infrastructure.
+        </p>
+      </div>
+
+      <div class="tool-card">
+        <h2>SketchUp</h2>
+        <p>
+          An intuitive 3D modeling software used for quick architectural concept
+          visualizations.
+        </p>
+      </div>
+
+      <div class="tool-card">
+        <h2>Photoshop</h2>
+        <p>
+          Essential for post-production, rendering edits, and presentation
+          graphics.
+        </p>
+      </div>
+
+      <div class="tool-card">
+        <h2>Rhino 3D</h2>
+        <p>
+          Used for complex geometry modeling and parametric designs in
+          architectural workflows.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Digital Arch. All Rights Reserved.</p>
+    </footer>
+  </body>
+  <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+</html>
