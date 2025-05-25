@@ -28,9 +28,11 @@ window.addEventListener('scroll', () => {
 
 
 // Image-Slider text
+
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const textOverlay = document.querySelector('.slide-two .video-text');
+const sliderContainer = document.querySelector('.image-slider');
 let currentSlide = 0;
 
 function showSlide(index) {
@@ -39,31 +41,49 @@ function showSlide(index) {
     dots[i].classList.toggle('active', i === index);
   });
 
-  // Show text only on second slide (index 1)
   if (index === 1) {
     textOverlay.style.display = 'block';
+    sliderContainer.classList.add('second-slide');
+    sliderContainer.classList.remove('first-slide');
   } else {
     textOverlay.style.display = 'none';
+    sliderContainer.classList.add('first-slide');
+    sliderContainer.classList.remove('second-slide');
   }
 
   currentSlide = index;
 }
 
+// Manual controls
 document.getElementById('prevBtn').addEventListener('click', () => {
   showSlide((currentSlide - 1 + slides.length) % slides.length);
+  resetAutoSlide();
 });
 
 document.getElementById('nextBtn').addEventListener('click', () => {
   showSlide((currentSlide + 1) % slides.length);
+  resetAutoSlide();
 });
 
 dots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
     showSlide(index);
+    resetAutoSlide();
   });
 });
 
-// Initial setup
+// Initial setup: Add class for first slide at start
+sliderContainer.classList.add('first-slide');
 showSlide(currentSlide);
 
+// Auto-slide every 10 seconds
+let autoSlideInterval = setInterval(() => {
+  showSlide((currentSlide + 1) % slides.length);
+}, 10000);
 
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(() => {
+    showSlide((currentSlide + 1) % slides.length);
+  }, 10000);
+}
