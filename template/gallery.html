@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TheSinghStudios</title>
+    <link href="../img/favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="../css/gallery.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Arial, sans-serif;
+      }
+      body {
+        background-color: #0e0e10;
+        color: #e0e0e0;
+        padding-bottom: 3rem;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a {
+        text-decoration: none;
+        color: #e0e0e0;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 0, 0, 0);
+        transition: background-color 0.3s;
+        z-index: 2;
+      }
+      /* Navbar background appears on scroll */
+      .navbar.scrolled {
+        background: rgba(0, 0, 0, 0.9);
+      }
+      .logo {
+        width: 140px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+      }
+      .logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .logo-name {
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-left: 0.5rem;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex-grow: 1;
+        margin-left: 2rem;
+      }
+      .nav-links a {
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: #3498db;
+      }
+/* ==== Dropdown ==== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1100; /* Above navbar for dropdown */
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #333;
+  color: #9E1716;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.9);
+  z-index: 1200; /* higher than slider */
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: #ddd;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #1982E4; /* Blue accent */
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+      .gallery-header {
+        text-align: center;
+        padding: 4rem 1rem 2rem;
+      }
+      .gallery-header h1 {
+        font-size: 2.5rem;
+        color: #3498db;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+      }
+      .gallery-header p {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1rem;
+        color: #ccc;
+      }
+
+      .gallery-grid {
+        max-width: 1200px;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+
+      .gallery-card {
+        background: #1a1a1a;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s;
+      }
+      .gallery-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .gallery-card .info {
+        padding: 1rem;
+      }
+      .gallery-card .info h3 {
+        color: #3498db;
+        margin-bottom: 0.5rem;
+      }
+      .gallery-card .info p {
+        font-size: 0.95rem;
+        color: #ccc;
+      }
+      .footer {
+        background: #161616;
+        color: white;
+        padding: 4rem 2rem;
+      }
+      .footer-container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      .footer-logo {
+        width: 150px;
+        margin-bottom: 2rem;
+      }
+      .footer-logo img {
+        width: 100%;
+        height: auto;
+      }
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      .footer-section h3 {
+        color: #3498db;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+      .footer-links {
+        list-style: none;
+      }
+      .footer-links li {
+        margin-bottom: 1rem;
+      }
+      .footer-links a {
+        color: #cccccc;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+      }
+      .footer-links a:hover {
+        color: #3498db;
+      }
+      .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 2rem;
+        text-align: center;
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      .social-links a {
+        color: #cccccc;
+        padding: 0.5rem;
+        transition: color 0.3s;
+      }
+      .social-links a:hover {
+        color: #3498db;
+      }
+
+      @media (max-width: 768px) {
+        .gallery-header h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="digitalarch.html">
+          <img src="../img/logo.png" alt="Digital Architecture Logo" />
+        </a>
+        <div class="logo-name">TheSingh Studios</div>
+      </div>
+      <div class="nav-links">
+        <a href="digitalarch.html">Home</a>
+        <div class="dropdown">
+        <button class="dropbtn">Products</button>
+        <div class="dropdown-content">
+          <a href="gamehome.html">Zombie Killer</a>
+          <a href="digitalarch.html">Digital Architecture</a>
+        </div>
+      </div>
+        <!-- <a href="tools.html">Tools</a> -->
+        <a href="#gallery">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <!-- <div class="right-section">
+          <a href="#signin" class="signinlink">Sign In</a>
+        </div> -->
+    </nav>
+    <section class="gallery-header">
+      <h1>Our Digital Architecture Projects</h1>
+      <p>
+        A deeper dive into some of our most impactful work. Each visual is
+        accompanied by a short summary of its intent, and
+        architectural focus.
+      </p>
+    </section>
+
+    <section class="gallery-grid">
+  <!-- Gallery Cards -->
+  <div class="gallery-card" data-video="../gallery/city_overview.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss8.png" alt="Residential Block Visualization" />
+    <div class="info">
+      <h3>City Overview</h3>
+      <p>Explore the beautiful city created by us</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/main_building.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss1.png" alt="Elite University Campus" />
+    <div class="info">
+      <h3>Main Building</h3>
+      <p>Impressive Building with great surroundings</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/building_surroundings.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss2.png" alt="Surroundings Dashboard" />
+    <div class="info">
+      <h3>Building Surroundings</h3>
+      <p>Toggle-based real-time layers for visualizing urban surroundings like parks, theater, helipad, and tennis court.</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/flat_pricing.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss7.png" alt="Flat Pricing" />
+    <div class="info">
+      <h3>Flat Pricing</h3>
+      <p>A one-stop solution to get details about all the flats and their prices.</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/airport_station.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss3.png" alt="Airport Station" />
+    <div class="info">
+      <h3>Airport Station</h3>
+      <p>Access the airport through this.</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/football_stadiums.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss4.png" alt="Football Stadiums" />
+    <div class="info">
+      <h3>Football Stadiums</h3>
+      <p>Stadiums for practice and matches.</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/elite_university.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss5.png" alt="Elite University" />
+    <div class="info">
+      <h3>Elite University</h3>
+      <p>A top-rated university with world-class surroundings.</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/mcdonalds.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss6.png" alt="McDonald's" />
+    <div class="info">
+      <h3>McDonald's</h3>
+      <p>Famous fast food restaurant serving burgers and fries.</p>
+    </div>
+  </div>
+
+  <div class="gallery-card" data-video="../gallery/central_station.mp4" onclick="openVideo(this)">
+    <img src="../img/digitalarchassets/ss10.png" alt="Central Station" />
+    <div class="info">
+      <h3>Central Station</h3>
+      <p>A central hub for all transportation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Single Video Modal -->
+<div id="videoModal" class="video-modal">
+  <div class="video-content">
+    <span class="close-btn" onclick="closeVideo()">&times;</span>
+    <video id="cityVideo" controls>
+      <source id="videoSource" src="" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- <div class="footer-top">
+             <div class="footer-logo">
+              <img src="../img/logo.png" alt="Digital Architecture" />
+            </div> -->
+          </div> 
+          <!-- <div class="footer-content">
+            <div class="footer-section">
+              <h3>About</h3>
+              <ul class="footer-links">
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Services</h3>
+              <ul class="footer-links">
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Visualization</a></li>
+                <li><a href="#">Consulting</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Resources</h3>
+              <ul class="footer-links">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Contact</h3>
+              <ul class="footer-links">
+                <li><a href="#">Email</a></li>
+                <li><a href="#">Phone</a></li>
+                <li><a href="#">Address</a></li>
+              </ul>
+            </div>
+          </div> -->
+          <div class="footer-bottom">
+            &copy; 2025 TheSinghStudios. All rights reserved.
+          </div>
+          <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </footer>
+  </body>
+  <script src="../js/gallery.js"></script>
+  <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+</html>
