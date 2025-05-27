@@ -353,6 +353,37 @@ form {
   box-shadow: 0 0 12px #9E1716;
 }
 
+
+/* Contact info */
+
+ .contact-text {
+  margin-top: 5rem;
+  text-align: justify;
+        flex: 1 1 40%;
+        color: #ffffff;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .contact-text h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #9E1716;
+      }
+      .contact-text p {
+        margin-bottom: 1.5rem;
+      }
+      .cont-info {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .cont-info img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+      }
+
 /* ==== Footer ==== */
 .footer {
   background: #161616;

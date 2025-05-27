@@ -378,6 +378,66 @@
     transform: scale(1.03);
   }
 
+  /* Glimpse-Cards */
+
+  /* Container grid control */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Card base */
+.item.features-image {
+  flex: 0 0 calc(33.33% - 2rem); /* 3 cards per row with gap */
+  background: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.item.features-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Inner content wrapper */
+.item-wrapper {
+  padding: 1rem;
+}
+
+/* Image */
+.item-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.item-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Paragraph */
+.mbr-text {
+  font-size: 0.95rem;
+  color: #cccccc;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+  
+
   @media (max-width: 768px) {
     .architecture-image-grid {
       grid-template-columns: 1fr;
