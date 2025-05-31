@@ -265,8 +265,8 @@
 /* Images below the text, side by side */
 .feature-tag img {
   margin-top: 10px;
-  width: 80px; /* Adjust size of the icon */
-  height: 80px; /* Adjust size of the icon */
+  width: 100px; /* Adjust size of the icon */
+  height: 100px; /* Adjust size of the icon */
 }
 
 
