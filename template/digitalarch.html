@@ -5,369 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TheSinghStudios</title>
     <link href="../img/favicon.ico" rel="icon" />
-    <style>
-      /* Base styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Arial, sans-serif;
-      }
-      a {
-        text-decoration: none;
-      }
-      body {
-        min-height: 100vh;
-        background: #000;
-      }
-
-      /* Navbar */
-      .navbar {
-        position: fixed;
-        top: 0;        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        background: rgba(0, 0, 0, 0);
-        transition: background-color 0.3s;
-        z-index: 2;
-      }
-      /* Navbar background appears on scroll */
-      .navbar.scrolled {
-        background: rgba(0, 0, 0, 0.9);
-      }
-      .logo {
-        width: 140px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-      }
-      .logo img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        display: block;
-      }
-
-      .logo-name {
-        color: white;
-        font-size: 1rem;
-        font-weight: 600;
-        margin-left: 0.5rem;
-      }
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-        flex-grow: 1;
-        margin-left: 2rem;
-      }
-      .nav-links a {
-        color: #ffffff;
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        transition: color 0.3s;
-        font-weight: 500;
-      }
-      .nav-links a:hover {
-        color: #3498db;
-      }
-      .right-section {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-      .signinlink {
-        color: #ffffff;
-      }
-      .sign-in-btn {
-        background: #3498db;
-        color: white;
-        border: none;
-        padding: 0.5rem 1.5rem;
-        border-radius: 20px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.3s;
-      }
-      .sign-in-btn:hover {
-        background: #5dade2;
-      }
-      /* ==== Dropdown ==== */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  z-index: 1100; /* Above navbar for dropdown */
-}
-
-.dropbtn {
-  background-color: transparent;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 16px;
-  transition: color 0.3s, background-color 0.3s;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #333;
-  color: #9E1716;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #222;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.9);
-  z-index: 1200; /* higher than slider */
-  border-radius: 4px;
-}
-
-.dropdown-content a {
-  color: #ddd;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.dropdown-content a:hover {
-  background-color: #1982E4; /* Blue accent */
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-      /* Hero section with video background */
-      .hero {
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-      }
-      .video-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-      }
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
-        z-index: 1;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 1;
-        color: white;
-        padding: 2rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .hero-content h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .hero-content p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        line-height: 1.5;
-      }
-
-      /* Description section */
-      .architecture-description {
-        min-height: 100vh;
-        background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-        padding: 6rem 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .description-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        gap: 4rem;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .description-content {
-        flex: 0 0 55%;
-        padding-right: 2rem;
-        color: #cccccc;
-      }
-      .description-content h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #3498db;
-        font-weight: 700;
-      }
-      .description-content p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-      }
-      .features {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-      .feature-tag {
-        background: rgba(52, 152, 219, 0.1);
-        color: #3498db;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-      .architecture-image {
-        flex: 0 0 45%;
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      }
-      .architecture-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      /* Footer */
-      .footer {
-        background: #161616;
-        color: white;
-        padding: 4rem 2rem;
-      }
-      .footer-container {
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-      .footer-top {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 3rem;
-        text-align: center;
-      }
-      .footer-logo {
-        width: 150px;
-        margin-bottom: 2rem;
-      }
-      .footer-logo img {
-        width: 100%;
-        height: auto;
-      }
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-        margin-bottom: 3rem;
-      }
-      .footer-section h3 {
-        color: #3498db;
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-        font-weight: 600;
-      }
-      .footer-links {
-        list-style: none;
-      }
-      .footer-links li {
-        margin-bottom: 1rem;
-      }
-      .footer-links a {
-        color: #cccccc;
-        font-size: 0.9rem;
-        transition: color 0.3s;
-      }
-      .footer-links a:hover {
-        color: #3498db;
-      }
-      .footer-bottom {
-        border-top: 1px solid #333;
-        padding-top: 2rem;
-        text-align: center;
-        color: #666;
-        font-size: 0.9rem;
-      }
-      .social-links {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-      .social-links a {
-        color: #cccccc;
-        padding: 0.5rem;
-        transition: color 0.3s;
-      }
-      .social-links a:hover {
-        color: #3498db;
-      }
-
-      .architecture-image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-    flex: 1 1 100%;
-  }
-
-  .architecture-image-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s;
-  }
-
-  .architecture-image-grid img:hover {
-    transform: scale(1.03);
-  }
-
-  @media (max-width: 768px) {
-    .architecture-image-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-      @media (max-width: 1024px) {
-        .description-container {
-          flex-direction: column;
-          text-align: center;
-        }
-        .architecture-image,
-        .description-content {
-          flex: 0 0 100%;
-          padding-right: 0;
-        }
-        .features {
-          justify-content: center;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="../css/digitalarch.css">
   </head>
   <body>
     <!-- Navbar -->
@@ -414,24 +52,38 @@
 
     <!-- Description Section -->
     <section class="architecture-description">
-      <div class="description-container">
-        <div class="description-content">
-          <h2>What is Digital Architecture?</h2>
-          <p>
-            Digital architecture is the blend of art and technology—using
-            advanced game engines and visualization tools to create immersive,
-            real-time designs that push the boundaries of traditional
-            architecture.
-          </p>
-          <div class="features">
-            <span class="feature-tag">Real-time Rendering</span>
-            <span class="feature-tag">Interactive Designs</span>
-            <span class="feature-tag">Virtual Reality</span>
-          </div>
-        </div>
-        
+  <div class="description-container">
+    <div class="description-content">
+      <h2>What is Digital Architecture?</h2>
+      <p>
+        Digital architecture is the blend of art and technology—using advanced game engines and visualization tools to create immersive, real-time designs that push the boundaries of traditional architecture.
+      </p>
+    </div>
+
+    <div class="services">
+      <h2>Choose from a Range of Various Services</h2>
+      <div class="features">
+        <span class="feature-tag">
+          <span class="feature-text">Virtual Tour</span>
+          <img class="feature-icon" src="../img/assets/virtual360.png" alt="Virtual Tour Icon">
+        </span>
+        <span class="feature-tag">
+          <span class="feature-text">3-D Floor Plan</span>
+          <img class="feature-icon" style="width: 120px;" src="../img/assets/floor_plan.png" alt="Design Icon">
+        </span>
+        <span class="feature-tag">
+          <span class="feature-text">Virtual Staging</span>
+          <img class="feature-icon" style="width: 120px;"src="../img/assets/virtual_staging_features.png" alt="VR Icon">
+        </span>
+        <span class="feature-tag">
+          <span class="feature-text">Interactive Experience</span>
+          <img class="feature-icon" style="width: 120px;" src="../img/assets/interactive_exp.png" alt="VR Icon">
+        </span>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
     <section class="architecture-description">
       <div class="description-container">
         <div class="description-content">
@@ -442,9 +94,77 @@
           
         </div>
 <div class="architecture-image-grid">
-      <img src="../img/digitalarchassets/ss1.png" alt="Digital Architecture Screenshot 1" />
+  <section data-bs-version="5.1" class="features3 cid-u5yko6sMN2" id="features3-6">
+  <div class="container">
+    <div class="row mt-4">
+      
+      <div class="item features-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="item-img">
+            <a href="#"><img src="../img/assets/interactive-experience.png" alt="3D model inventory" loading="lazy" class="lazyload" data-src="assets/images/slide5-1-816x816.webp"></a>
+          </div>
+          <div class="item-content">
+            <h5 class="item-title mbr-fonts-style display-7"><strong>Interactive Project Experience</strong></h5>
+            <p class="mbr-text mbr-fonts-style mt-3 display-7">Provides you with precise project details and showcase various configurations, including 2D and 3D floor plans, to give a comprehensive view of the project. Highlight key features, unique aspects of each configuration to help potential buyers visualize their future home.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item features-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="item-img">
+            <a href="#"><img src="../img/assets/virtual-staging.png" alt="Virtual Staging" loading="lazy" class="lazyload" data-src="assets/images/virtual-staging-596x795.webp"></a>
+          </div>
+          <div class="item-content">
+            <h5 class="item-title mbr-fonts-style display-7"><strong>Virtual Staging</strong></h5>
+            <p class="mbr-text mbr-fonts-style mt-3 display-7">Virtually remove unwanted objects, change elements, and add furnishing to spaces to create appealing real-estate collateral.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item features-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="item-img">
+            <a href="#"><img src="../img/assets/virtual-tours.png" alt="Virtual tour" loading="lazy" class="lazyload" data-src="assets/images/virtual-tour-1.webp"></a>
+          </div>
+          <div class="item-content">
+            <h5 class="item-title mbr-fonts-style display-7"><strong>Virtual Tours</strong></h5>
+            <p class="mbr-text mbr-fonts-style mt-3 display-7">Create immersive 360° tours of your properties, available 24/7 on any device.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item features-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="item-img">
+            <a href="#"><img src="../img/assets/virtual-configurator.png" alt="Virtual Configurator" loading="lazy" class="lazyload" data-src="assets/images/virtual-configurator.webp"></a>
+          </div>
+          <div class="item-content">
+            <h5 class="item-title mbr-fonts-style display-7"><strong>Virtual Configurator</strong></h5>
+            <p class="mbr-text mbr-fonts-style mt-3 display-7">Change material/color of different elements in real time to see how they look on your design.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="item features-image col-12 col-md-6 col-lg-4">
+        <div class="item-wrapper">
+          <div class="item-img">
+            <a href="#"><img src="../img/assets/2d-3d.png" alt="2D to 3D floor plan" loading="lazy" class="lazyload" data-src="assets/images/2d-to-3d-square-816x816.webp"></a>
+          </div>
+          <div class="item-content">
+            <h5 class="item-title mbr-fonts-style display-7"><strong>Transforming 2D Visions into 3D Realities</strong></h5>
+            <p class="mbr-text mbr-fonts-style mt-3 display-7">Go beyond flat blueprints. Immerse yourself in interactive 3D floor plans that showcase the true spatial relationships, flow, and ambiance of your designs.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- <img src="../img/digitalarchassets/ss1.png" alt="Digital Architecture Screenshot 1" />
       <img src="../img/digitalarchassets/ss2.png" alt="Digital Architecture Screenshot 2" />
-      <img src="../img/digitalarchassets/ss7.png" alt="Digital Architecture Screenshot 3" />
+      <img src="../img/digitalarchassets/ss7.png" alt="Digital Architecture Screenshot 3" /> -->
     </div>
       </div>
     </section>
