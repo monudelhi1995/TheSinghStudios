@@ -104,10 +104,17 @@
       from { width: 0%; }
       to { width: 100%; }
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .ad-popup {
+        width: 100%;
+        padding: 20px;
+      }
+    }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5758733990066740"
      crossorigin="anonymous"></script>
-     <meta name="google-adsense-account" content="ca-pub-5758733990066740">
 </head>
 <body>
   <div class="ad-popup">
@@ -119,7 +126,6 @@
     </div>
 
     <div class="ad-content">
-      <!-- Google AdSense Code -->
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-5758733990066740"
@@ -142,6 +148,9 @@
       setTimeout(() => {
         closeButton.style.display = "block";
         console.log("Ad simulation complete");
+
+        // Auto click the close button after 10 seconds
+        closeButton.click();
       }, 10000);
     });
 
