@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TheSinghStudios</title>
   <link rel="icon" href="../img/favicon.ico" />
   <style>
@@ -103,7 +105,7 @@
       to { width: 100%; }
     }
   </style>
-  <meta name="google-adsense-account" content="ca-pub-5758733990066740">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5758733990066740" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="ad-popup">
@@ -116,11 +118,9 @@
 
     <div class="ad-content">
       <!-- Google AdSense Code -->
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1036389450136066"
-        crossorigin="anonymous"></script>
       <ins class="adsbygoogle"
            style="display:block"
-           data-ad-client="ca-pub-1036389450136066"
+           data-ad-client="ca-pub-5758733990066740"
            data-ad-slot="1520149589"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
@@ -145,6 +145,7 @@
 
     document.getElementById("closeButton").addEventListener("click", () => {
       console.log("Ad closed by user");
+      // Send message to parent window to indicate that the ad is completed
       window.parent.postMessage("adCompleted", "*");
     });
   </script>
