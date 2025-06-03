@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TheSinghStudios</title>
-  <link rel="icon" href="../img/favicon.ico" />
+  <meta charset="UTF-8" />
+  <title>Ad Watch</title>
   <link rel="stylesheet" href="../css/ads.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5758733990066740"
-     crossorigin="anonymous"></script>
+          crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="ad-popup">
-    <div class="header">Watch an Ad to Continue</div>
-    <div class="subheader">Please watch the ad below to resume your game</div>
+<body style="margin:0; background:transparent;">
+  <div class="ad-container" style="padding:20px; text-align:center; background:white;">
+    <h2>Watch an Ad to Continue</h2>
 
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-
-    <div class="ad-content">
+    <div class="ad-content" style="margin:20px auto;">
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-5758733990066740"
@@ -30,26 +23,16 @@
       </script>
     </div>
 
-    <button id="closeButton">Continue to Game</button>
+    <p>Please wait...</p>
+    <button id="continueBtn" style="display:none;">Continue</button>
   </div>
 
   <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const closeButton = document.getElementById("closeButton");
+    setTimeout(() => {
+      document.getElementById("continueBtn").style.display = "inline-block";
+    }, 10000); // Show after 10s
 
-      // Show close button after 10 seconds
-      setTimeout(() => {
-        closeButton.style.display = "block";
-        console.log("Ad simulation complete");
-
-        // Auto click the close button after 10 seconds
-        closeButton.click();
-      }, 10000);
-    });
-
-    document.getElementById("closeButton").addEventListener("click", () => {
-      console.log("Ad closed by user");
-      // Send message to parent window to indicate that the ad is completed
+    document.getElementById("continueBtn").addEventListener("click", () => {
       window.parent.postMessage("adCompleted", "*");
     });
   </script>
