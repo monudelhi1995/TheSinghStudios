@@ -50,8 +50,8 @@
       <p class="hero-subtitle">Creating visually stunning games and immersive digital experiences that push the
         boundaries of creativity.</p>
       <div class="hero-buttons">
-        <a href="#devlogs" class="btn btn-primary">Watch Dev Logs</a>
-        <a href="#about" class="btn btn-secondary">Learn More</a>
+        <a href="#download" class="btn btn-primary">Download Free Game</a>
+        <a href="#devlogs" class="btn btn-secondary">Watch Dev Logs</a>
       </div>
     </div>
 
@@ -62,6 +62,37 @@
     <div class="scroll-indicator">
       <span>Scroll</span>
       <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Download Section -->
+  <section class="download-section" id="download">
+    <div class="download-container">
+      <div class="download-content">
+        <div class="section-label">AVAILABLE ON STEAM</div>
+        <h2 class="section-title">GET ZOMBIE<br>KILLER NOW</h2>
+        <p class="section-text">
+          Experience the thrill of our latest creation. Battle hordes of undead in this action-packed zombie shooter
+          crafted with passion by TheSinghStudio.
+        </p>
+        <div class="download-buttons">
+          <a href="https://store.steampowered.com/app/2925210/Zombie_Killer/" target="_blank"
+            class="btn btn-primary btn-download">
+            <span class="download-icon">🎮</span>
+            Play Free on Steam
+          </a>
+          <a href="https://store.steampowered.com/app/4062720/Zombie_Killer__Overkill_Protocol/?snr=1_7_7_230_150_1"
+            target="_blank" class="btn btn-secondary btn-download">
+            <span class="download-icon">⚡</span>
+            Get Overkill DLC
+          </a>
+        </div>
+        <p class="download-note">Available on Steam for Windows PC</p>
+      </div>
+      <div class="download-image">
+        <img src="./img/Slider-Zombie2-img.jpeg" alt="Zombie Killer Game">
+        <div class="download-frame"></div>
+      </div>
     </div>
   </section>
 
@@ -286,7 +317,7 @@
       });
     }, observerOptions);
 
-    document.querySelectorAll('.about-section, .devlogs-section, .contact-section').forEach(section => {
+    document.querySelectorAll('.download-section, .about-section, .devlogs-section, .contact-section').forEach(section => {
       section.classList.add('reveal-on-scroll');
       observer.observe(section);
     });
