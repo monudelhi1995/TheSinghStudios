@@ -1,155 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TheSinghStudio</title>
-  <link rel="stylesheet" href="../css/index.css">
+  <title>TheSinghStudio — Game Development Studio</title>
+  <meta name="description"
+    content="TheSinghStudio specializes in creating visually stunning games and immersive digital experiences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-  <div class="logo">
-  <img src="./img/logo_HD.png" alt="Logo">
-  <span>
-    TheSingh<br>Studio
-  </span>
-</div>
-
-  <div class="nav-buttons">
-    <a href="#">Home</a>
-    <!-- <a href="#">About</a> -->
-    <div class="dropdown">
-    <button class="dropbtn">Products</button>
-    <div class="dropdown-content">
-      <a href="./template/gamehome.html">Zombie Killer</a>
-      <a href="./template/digitalarch.html">Digital Architecture</a>
-    </div>
-  </div>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- Image Slider -->
-<section class="image-slider" id="imageSlider">
- <div class="video-container">
-  <video class="slide active" autoplay muted loop playsinline preload="auto">
-    <source src="./img/Zombie-killer.mp4" type="video/mp4" />
-  </video>
-
-  <div class="video-wrapper slide-two">
-  <video class="slide" autoplay muted loop playsinline preload="auto">
-    <source src="./img/digi-achitecture.mp4" type="video/mp4" />
-  </video>
-  <div class="video-text">
-    <h2>Digital Architecture</h2>
-    <p>Discover innovative designs and immersive experiences.</p>
-  </div>
-</div>
-
-
-  <button id="prevBtn" class="prev-btn">&laquo;</button>
-  <button id="nextBtn" class="next-btn">&raquo;</button>
-</div>
-
-
-  <!-- Dots -->
-  <div class="dots" id="sliderDots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-
-<!-- About-US -->
-
-<section class="about-section" id="about">
-  <div class="about-container">
-    <h2>About Us</h2>
-    <p>
-      At <span id="title"><strong>TheSinghStudio</strong></span>, we specialize in creating visually stunning digital experiences through high-end game development and cutting-edge architectural visualization. Our team of creative professionals is passionate about blending technology with art to bring your ideas to life.
-    </p>
-    <p>
-      Whether it's crafting immersive gameplay or rendering photorealistic building models, we ensure precision, performance, and perfection in every project we undertake.
-    </p>
-  </div>
-</section>
-
-<!-- Contact Us -->
-
-<section class="contact-section" id="contact">
-  <div class="contact-container">
-    <h2>Contact Us</h2>
-    <form id="contactForm" action="#" method="post">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+    <div class="nav-container">
+      <div class="logo">
+        <img src="./img/logo_HD.png" alt="TheSinghStudio Logo">
+        <span>TheSingh<br>Studio</span>
       </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#devlogs" class="nav-link">Dev Logs</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
 
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+      <a href="https://www.youtube.com/@TheSinghStudios-b8p" target="_blank" class="cta-btn">Subscribe</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-video-container">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="./img/Zombie-killer.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">GAME DEVELOPMENT STUDIO</div>
+      <h1 class="hero-title">WE ARE<br><span>THESINGHSTUDIO</span></h1>
+      <p class="hero-subtitle">Creating visually stunning games and immersive digital experiences that push the
+        boundaries of creativity.</p>
+      <div class="hero-buttons">
+        <a href="#devlogs" class="btn btn-primary">Watch Dev Logs</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
       </div>
-
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </div>
-
-  <!-- Contact Info -->
-  <div class="contact-text">
-    <h3>Welcome to The Singh Studios!</h3>
-    <p>
-      Exciting things happen here, and we're thrilled you're reaching
-      out. Whether it's jaw-dropping visuals, immersive experiences, or
-      top-notch game development, we've got you covered.
-      <br />Ready to bring your ideas to life? Let's chat!
-      <br />Best,<br />The Singh Studios Team
-    </p>
-    <div class="cont-info">
-      <img src="../img/icons/location.png" alt="Location" />
-      <div class="ci-text">East Jyoti Nagar, Shahdara, Delhi - 93</div>
     </div>
-    <div class="cont-info">
-      <img src="../img/icons/phone.png" alt="Phone" />
-      <div class="ci-text">+91-8100800095</div>
-    </div>
-    <div class="cont-info">
-      <img src="../img/icons/mail.png" alt="Email" />
-      <div class="ci-text">mayank.singh@thesinghstudios.com</div>
-    </div>
-  </div>
-</section>
 
-<!-- Footer -->
+    <!-- Geometric decorations -->
+    <div class="geo-element geo-1"></div>
+    <div class="geo-element geo-2"></div>
+    <div class="geo-element geo-3"></div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-<footer class="footer-bottom">
-          <div class="social-links">
-            <a href="#" aria-label="Twitter">Twitter</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="Discord">Discord</a>
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="./img/logo_HD.png" alt="TheSinghStudio">
+        <div class="about-shape"></div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">WHO WE ARE</div>
+        <h2 class="section-title">CREATIVITY IS OUR<br>GREATEST WEAPON</h2>
+        <p class="section-text">
+          At <strong>TheSinghStudio</strong>, we specialize in creating visually stunning digital experiences through
+          high-end game development. Our team of creative professionals is passionate about blending technology with art
+          to bring your ideas to life.
+        </p>
+        <p class="section-text">
+          Whether it's crafting immersive gameplay or creating photorealistic visuals, we ensure precision, performance,
+          and perfection in every project we undertake.
+        </p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Games Released</span>
           </div>
-          <p style="margin-top: 1rem">
-            TheSinghStudios 2024 @ All rights reserved
-          </p>
-</footer>
+          <div class="stat-item">
+            <span class="stat-number">1K+</span>
+            <span class="stat-label">Players</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Dev Logs Section -->
+  <section class="devlogs-section" id="devlogs">
+    <div class="devlogs-container">
+      <div class="devlogs-header">
+        <div class="section-label">BEHIND THE SCENES</div>
+        <h2 class="section-title">DEV LOGS</h2>
+        <p class="section-text">Follow our journey as we build amazing games. Watch development updates, tutorials, and
+          behind-the-scenes content.</p>
+      </div>
 
-<script src="./js/index.js"></script>
-<script src="./js/image-slider.js"></script>
+      <div class="devlogs-grid">
+        <!-- Video 1 -->
+        <div class="devlog-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/T66tubHDirc" title="TheSinghStudios Dev Log 1" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
 
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Thank you for contacting us! We’ll get back to you soon.");
-    this.reset(); // clears the form
-  });
-</script>
+        <!-- Video 2 -->
+        <div class="devlog-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/nVImSNT0y-c" title="TheSinghStudios Dev Log 2" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
 
+        <!-- Video 3 -->
+        <div class="devlog-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/0hlUoW_6iWk" title="TheSinghStudios Dev Log 3" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="devlog-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/srtm96DzAUE" title="TheSinghStudios Dev Log 4" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="devlog-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/UqCqQHIveYw" title="TheSinghStudios Dev Log 5" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="devlogs-cta">
+        <a href="https://www.youtube.com/@TheSinghStudios-b8p" target="_blank" class="btn btn-primary">
+          Subscribe on YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="section-label">GET IN TOUCH</div>
+        <h2 class="section-title">LET'S CREATE<br>SOMETHING GREAT</h2>
+        <p class="section-text">
+          Exciting things happen here, and we're thrilled you're reaching out. Whether it's jaw-dropping visuals,
+          immersive experiences, or top-notch game development, we've got you covered.
+        </p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">East Jyoti Nagar, Shahdara, Delhi - 93</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">+91-8100800095</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-text">mayank.singh@thesinghstudios.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form id="contactForm" class="contact-form">
+          <h3>Send us a message</h3>
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="./img/logo_HD.png" alt="TheSinghStudio">
+          <span>TheSinghStudio</span>
+        </div>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@TheSinghStudios-b8p" target="_blank" class="social-link"
+            aria-label="YouTube">▶</a>
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="social-link" aria-label="Discord">💬</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 TheSinghStudios. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Contact form handler
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for contacting us! We'll get back to you soon.");
+      this.reset();
+    });
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.about-section, .devlogs-section, .contact-section').forEach(section => {
+      section.classList.add('reveal-on-scroll');
+      observer.observe(section);
+    });
+  </script>
 </body>
+
 </html>
