@@ -1,0 +1,138 @@
+:root {
+  --sc-ease-out: ease-out;
+}
+.site-header > .text-link {
+  border: 0;
+  padding: 12px 0;
+  gap: 12px;
+}
+.game-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(78vh, 720px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 18px;
+  padding: 96px var(--sc-gutter) 56px;
+}
+.game-hero > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.game-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(0deg, #101112 2%, #101112b3 42%, transparent 82%),
+    linear-gradient(90deg, #101112d9, transparent 72%);
+}
+.game-hero h1 {
+  font-size: clamp(64px, 10vw, 136px);
+}
+.game-lead {
+  font-size: 17px;
+}
+.game-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 32px;
+}
+.game-note {
+  font-size: 13px;
+  color: var(--sc-ink-soft);
+}
+.crumbs {
+  padding: 20px var(--sc-gutter) 0;
+  font-size: 13px;
+  color: var(--sc-ink-soft);
+}
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.crumbs li + li::before {
+  content: "/";
+  margin-right: 8px;
+}
+.crumbs a {
+  display: inline-block;
+  padding-block: 2px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 48px clamp(32px, 5vw, 80px);
+}
+.game-grid h2,
+.game-gallery h2,
+.game-next h2 {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  margin-bottom: 14px;
+}
+.game-grid ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+.game-grid dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 20px;
+  margin: 12px 0 0;
+}
+.game-grid dt {
+  font-weight: 800;
+}
+.game-grid dd {
+  margin: 0;
+  color: var(--sc-ink-soft);
+}
+.game-grid .text-link {
+  margin-top: 16px;
+}
+.game-gallery {
+  padding-top: 0;
+}
+.game-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+}
+.game-shots img {
+  width: 100%;
+  height: auto;
+}
+.game-shots figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--sc-ink-soft);
+}
+.game-next {
+  border-top: 1px solid #343536;
+}
+.game-next p {
+  margin-bottom: 24px;
+}
+.not-found {
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.not-found h1 {
+  font-size: clamp(64px, 12vw, 136px);
+}

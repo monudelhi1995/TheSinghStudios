@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#101112" />
-    <title>TheSinghStudios | Built for the rush.</title>
+    <title>TheSinghStudios | Rush Strike &amp; Zombie Killer Games</title>
     <meta
       name="description"
       content="Independent games. Unforgettable adrenaline. Discover Rush Strike: Combat Racing on Android and Zombie Killer on Steam, from TheSinghStudios."
     />
+    <meta property="og:site_name" content="TheSinghStudios" />
     <meta property="og:title" content="TheSinghStudios | Built for the rush." />
     <meta
       property="og:description"
@@ -18,27 +19,85 @@
     <meta property="og:url" content="https://thesinghstudios.com/" />
     <meta
       property="og:image"
-      content="https://thesinghstudios.com/img/rush-strike/neo-kanto.webp"
+      content="https://thesinghstudios.com/img/og/home.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Rush Strike cars racing through a neon city at night"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TheSinghStudios | Built for the rush." />
+    <meta
+      name="twitter:description"
+      content="Step into Rush Strike and Zombie Killer. Two worlds. One independent game studio."
+    />
+    <meta
+      name="twitter:image"
+      content="https://thesinghstudios.com/img/og/home.jpg"
     />
     <link rel="canonical" href="https://thesinghstudios.com/" />
     <link rel="icon" href="./img/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="./css/fonts.css" />
     <link rel="stylesheet" href="./css/vendor/scrollcraft.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://thesinghstudios.com/#organization",
+            "name": "TheSinghStudios",
+            "alternateName": "The Singh Studios",
+            "url": "https://thesinghstudios.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://thesinghstudios.com/img/studio/lion.webp",
+              "width": 256,
+              "height": 256
+            },
+            "email": "mayank.singh@thesinghstudios.com",
+            "sameAs": [
+              "https://www.youtube.com/@TheSinghStudios-b8p",
+              "https://www.instagram.com/thesinghstudios24/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://thesinghstudios.com/#website",
+            "url": "https://thesinghstudios.com/",
+            "name": "TheSinghStudios",
+            "publisher": { "@id": "https://thesinghstudios.com/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://thesinghstudios.com/#webpage",
+            "url": "https://thesinghstudios.com/",
+            "name": "TheSinghStudios | Rush Strike & Zombie Killer Games",
+            "isPartOf": { "@id": "https://thesinghstudios.com/#website" },
+            "about": { "@id": "https://thesinghstudios.com/#organization" },
+            "mentions": [
+              { "@id": "https://thesinghstudios.com/rush-strike/#game" },
+              { "@id": "https://thesinghstudios.com/zombie-killer/#game" }
+            ],
+            "inLanguage": "en"
+          }
+        ]
+      }
+    </script>
     <script src="./js/vendor/scrollcraft.js" defer></script>
     <script src="./js/index.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="TheSinghStudios home"
+      <a class="brand" href="#home"
         ><img src="./img/studio/lion.webp" width="48" height="48" alt="" /><span
-          >THE SINGH<span>STUDIOS</span></span
+          >THE SINGH <span>STUDIOS</span></span
         ></a
       >
       <button
@@ -79,15 +138,28 @@
             From the starting grid to the last survivor.<br />We make games that
             get under your skin.
           </p>
-          <a class="button button-primary" href="#games"
-            >Explore games <span aria-hidden="true">↗</span></a
-          >
+          <div class="hero-actions">
+            <a class="button button-primary" href="#games"
+              >Explore games <span aria-hidden="true">↗</span></a
+            ><a
+              class="button button-light"
+              href="https://play.google.com/store/apps/details?id=com.thesinghstudios.rushstrike"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Get on Google Play <span aria-hidden="true">↗</span></a
+            >
+          </div>
         </div>
         <div class="hero-machine" data-sc-parallax="0.8">
           <div class="car-shadow" aria-hidden="true"></div>
           <img
             class="hero-car"
             src="./img/rush-strike/hero-car.webp"
+            srcset="
+              ./img/rush-strike/hero-car-960.webp   960w,
+              ./img/rush-strike/hero-car.webp      1795w
+            "
+            sizes="(max-width: 700px) 110vw, 65vw"
             width="1795"
             height="876"
             alt="Magenta Rush Strike sports car, promotional artwork"
@@ -148,13 +220,13 @@
               width="1600"
               height="900"
               alt="Rush Strike racing through the city at night"
+              loading="lazy"
             /><video
               id="circuit-video"
               muted
               loop
               playsinline
               preload="none"
-              poster="./img/rush-strike/neo-kanto.webp"
               aria-hidden="true"
               tabindex="-1"
               data-video-src="./img/rush-strike/neo-kanto.mp4"
@@ -258,7 +330,7 @@
             <h3>Your place on the grid.</h3>
             <p>
               Follow Rudra Singh through the Night Circuit, build your garage
-              and race friends on the same Wi-Fi.
+              and race friends online or over Wi-Fi.
             </p>
           </div>
           <a
@@ -267,6 +339,9 @@
             target="_blank"
             rel="noopener noreferrer"
             >Watch Rush Strike <span aria-hidden="true">↗</span></a
+          >
+          <a class="text-link" href="./rush-strike/"
+            >Rush Strike game details <span aria-hidden="true">↗</span></a
           >
         </div>
       </section>
@@ -282,7 +357,12 @@
           data-sc-reveal-at="0.05 0.3"
         >
           <img
-            src="./img/Slider-Zombie2-img.jpeg"
+            src="./img/zombie-killer/key-art-1600.webp"
+            srcset="
+              ./img/zombie-killer/key-art-960.webp   960w,
+              ./img/zombie-killer/key-art-1600.webp 1600w
+            "
+            sizes="(max-width: 700px) 100vw, 78vw"
             width="1600"
             height="900"
             alt="A survivor facing a crowd of zombies in a ruined city. Zombie Killer promotional artwork."
@@ -311,6 +391,8 @@
             target="_blank"
             rel="noopener noreferrer"
             >Discover Overkill Protocol DLC <span aria-hidden="true">↗</span></a
+          ><a class="dlc-link" href="./zombie-killer/"
+            >Zombie Killer game details <span aria-hidden="true">↗</span></a
           ><span class="platform-note">Windows PC</span>
         </div>
       </section>
@@ -621,7 +703,7 @@
           href="https://discord.gg/B9PCfYe9aT"
           target="_blank"
           rel="noopener noreferrer"
-          >Discord ?</a
+          >Discord ↗</a
         ><a
           href="https://www.instagram.com/thesinghstudios24/"
           target="_blank"

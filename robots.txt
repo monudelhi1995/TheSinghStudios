@@ -3,3 +3,5 @@ Disallow:
 
 User-agent: Googlebot
 Allow: /template/ads.html
+
+Sitemap: https://thesinghstudios.com/sitemap.xml
